@@ -57,3 +57,4 @@ C:\Code\StorageReport\obj\Debug\net10.0\refint\StorageReport.dll
 C:\Code\StorageReport\obj\Debug\net10.0\StorageReport.pdb
 C:\Code\StorageReport\obj\Debug\net10.0\StorageReport.genruntimeconfig.cache
 C:\Code\StorageReport\obj\Debug\net10.0\ref\StorageReport.dll
+C:\Code\StorageReport\obj\Debug\net10.0\StorageReport.sourcelink.json

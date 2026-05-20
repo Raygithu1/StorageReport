@@ -2,46 +2,25 @@
 using System.Text.Json;
 using System.Globalization;
 
-// 1. YOUR CONNECTION STRING
 string connString = "Server=spdbssrep004.healthbc.org;Database=StorageServices;Integrated Security=True;TrustServerCertificate=True;";
 var masterExport = new Dictionary<string, object>();
 
-Console.WriteLine("Connecting to SQL Server...");
+// Your requested mapping
+var nameMap = new Dictionary<string, string> {
+    { "KDCALLETRA01", "A01" }, { "KDCALLETRA02", "A02" }, { "KDCALLETRA03", "A03" },
+    { "KDCPRIM02", "P02" }, { "KDCPRIM03", "P03" },
+    { "KDCXP01", "XP01" }, { "KDCXP02", "XP02" }
+};
 
-try 
-{
-    // 2. PROCESS TIER 1 (Main Storage)
-    Console.WriteLine("Fetching Tier 1 Data...");
-    masterExport["tier1"] = await GetData(
-        new[] { "KDCXP01", "KDCXP02", "KDCALLETRA01", "KDCALLETRA02", "KDCALLETRA03", "KDCPRIM02", "KDCPRIM03" }, 
-        "Tier 1 Capacity % Used", 
-        "Tier 1 Capacity (GB)"
-    );
+Console.WriteLine("Fetching Data...");
 
-    // 3. PROCESS COHESITY
-    Console.WriteLine("Fetching Cohesity Data...");
-    masterExport["cohesity"] = await GetData(
-        new[] { "COHCCH01", "COHCCH02", "COHCW01", "COHFCE01", "COHJPN01", "COHKCE01", "COHKCE04", "COHKDC01", "COHKDC04", "COHKEL01", "COHPCE01", "COHSMH01", "COHVCE01" }, 
-        "Total Capacity % Used", 
-        "Total Capacity (GB)"
-    );
+// Process only Tier 1
+masterExport["tier1"] = await GetData(nameMap.Keys.ToArray(), "Tier 1 Capacity % Used", "Tier 1 Capacity (GB)");
 
-    // 4. SAVE TO JSON
-    var options = new JsonSerializerOptions { WriteIndented = true };
-    string jsonOutput = JsonSerializer.Serialize(masterExport, options);
-    File.WriteAllText("data.json", jsonOutput);
+var options = new JsonSerializerOptions { WriteIndented = true };
+File.WriteAllText("data.json", JsonSerializer.Serialize(masterExport, options));
+Console.WriteLine("Done! data.json updated.");
 
-    Console.WriteLine("--------------------------------------------------");
-    Console.WriteLine("SUCCESS! data.json has been created successfully.");
-    Console.WriteLine("You can now upload this file to GitHub.");
-    Console.WriteLine("--------------------------------------------------");
-}
-catch (Exception ex)
-{
-    Console.WriteLine("ERROR: " + ex.Message);
-}
-
-// --- HELPER METHOD ---
 async Task<Dictionary<string, List<object>>> GetData(string[] arrays, string pctM, string gbM) 
 {
     var history = new Dictionary<string, List<object>>();
@@ -65,16 +44,17 @@ async Task<Dictionary<string, List<object>>> GetData(string[] arrays, string pct
     }
     
     foreach (var n in pivot.Keys.Select(k => k.Item1).Distinct()) {
-        history[n] = new List<object>();
+        // Use mapped name if available, otherwise keep original
+        string displayName = nameMap.ContainsKey(n) ? nameMap[n] : n; 
+        history[displayName] = new List<object>();
+        
         foreach (var k in pivot.Keys.Where(x => x.Item1 == n).OrderBy(x => x.Item2)) {
             double tb = pivot[k].Tot / 1024.0;
             double u = tb * (pivot[k].Pct / 100.0);
-            history[n].Add(new { 
+            history[displayName].Add(new { 
                 Date = k.Item2.ToString("dd-MMM-yyyy", CultureInfo.InvariantCulture).ToUpper(), 
-                Total = Math.Round(tb, 2), 
-                Percent = Math.Round(pivot[k].Pct, 2), 
-                Used = Math.Round(u, 2), 
-                Free = Math.Round(tb - u, 2) 
+                Total = Math.Round(tb, 2), Percent = Math.Round(pivot[k].Pct, 2), 
+                Used = Math.Round(u, 2), Free = Math.Round(tb - u, 2) 
             });
         }
     }
