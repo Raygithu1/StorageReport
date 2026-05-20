@@ -364,6 +364,48 @@
         "Percent": 78.09,
         "Used": 261.8,
         "Free": 73.45
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 335.25,
+        "Percent": 78.09,
+        "Used": 261.8,
+        "Free": 73.45
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 335.25,
+        "Percent": 78.09,
+        "Used": 261.8,
+        "Free": 73.45
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 335.25,
+        "Percent": 78.09,
+        "Used": 261.8,
+        "Free": 73.45
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 335.25,
+        "Percent": 78.09,
+        "Used": 261.8,
+        "Free": 73.45
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 335.25,
+        "Percent": 78.09,
+        "Used": 261.8,
+        "Free": 73.45
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 335.25,
+        "Percent": 78.09,
+        "Used": 261.8,
+        "Free": 73.45
       }
     ],
     "KDCPRIM02": [
@@ -730,6 +772,48 @@
         "Percent": 74.96,
         "Used": 334.98,
         "Free": 111.9
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 446.88,
+        "Percent": 74.96,
+        "Used": 334.98,
+        "Free": 111.9
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 446.88,
+        "Percent": 74.96,
+        "Used": 334.98,
+        "Free": 111.9
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 446.88,
+        "Percent": 67.99,
+        "Used": 303.83,
+        "Free": 143.04
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 446.88,
+        "Percent": 67.99,
+        "Used": 303.83,
+        "Free": 143.04
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 446.88,
+        "Percent": 67.99,
+        "Used": 303.83,
+        "Free": 143.04
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 446.88,
+        "Percent": 68.1,
+        "Used": 304.32,
+        "Free": 142.55
       }
     ],
     "KDCPRIM03": [
@@ -1096,6 +1180,48 @@
         "Percent": 76.5,
         "Used": 341.86,
         "Free": 105.02
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 446.88,
+        "Percent": 76.5,
+        "Used": 341.86,
+        "Free": 105.02
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 446.88,
+        "Percent": 76.5,
+        "Used": 341.86,
+        "Free": 105.02
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 446.88,
+        "Percent": 76.5,
+        "Used": 341.86,
+        "Free": 105.02
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 446.88,
+        "Percent": 76.29,
+        "Used": 340.92,
+        "Free": 105.95
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 446.88,
+        "Percent": 76.29,
+        "Used": 340.92,
+        "Free": 105.95
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 446.88,
+        "Percent": 76.32,
+        "Used": 341.05,
+        "Free": 105.82
       }
     ],
     "KDCXP01": [
@@ -1462,6 +1588,48 @@
         "Percent": 44.59,
         "Used": 329.56,
         "Free": 409.53
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 739.1,
+        "Percent": 44.6,
+        "Used": 329.64,
+        "Free": 409.46
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 739.1,
+        "Percent": 44.61,
+        "Used": 329.71,
+        "Free": 409.39
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 739.1,
+        "Percent": 44.55,
+        "Used": 329.27,
+        "Free": 409.83
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 739.1,
+        "Percent": 44.54,
+        "Used": 329.19,
+        "Free": 409.9
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 739.1,
+        "Percent": 44.51,
+        "Used": 328.97,
+        "Free": 410.13
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 739.1,
+        "Percent": 44.51,
+        "Used": 328.97,
+        "Free": 410.13
       }
     ],
     "KDCXP02": [
@@ -1828,6 +1996,48 @@
         "Percent": 21.95,
         "Used": 162.23,
         "Free": 576.87
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 739.1,
+        "Percent": 21.95,
+        "Used": 162.23,
+        "Free": 576.87
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 739.1,
+        "Percent": 21.98,
+        "Used": 162.45,
+        "Free": 576.64
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 739.1,
+        "Percent": 22.01,
+        "Used": 162.68,
+        "Free": 576.42
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 739.1,
+        "Percent": 21.98,
+        "Used": 162.45,
+        "Free": 576.64
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 739.1,
+        "Percent": 21.97,
+        "Used": 162.38,
+        "Free": 576.72
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 739.1,
+        "Percent": 22.01,
+        "Used": 162.68,
+        "Free": 576.42
       }
     ],
     "KDCALLETRA02": [
@@ -2124,6 +2334,48 @@
         "Percent": 50.85,
         "Used": 340.95,
         "Free": 329.55
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 670.5,
+        "Percent": 50.95,
+        "Used": 341.62,
+        "Free": 328.88
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 670.5,
+        "Percent": 51.23,
+        "Used": 343.5,
+        "Free": 327
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 670.5,
+        "Percent": 51.25,
+        "Used": 343.63,
+        "Free": 326.87
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 670.5,
+        "Percent": 51.24,
+        "Used": 343.56,
+        "Free": 326.94
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 670.5,
+        "Percent": 51.28,
+        "Used": 343.83,
+        "Free": 326.67
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 670.5,
+        "Percent": 51.38,
+        "Used": 344.5,
+        "Free": 326
       }
     ],
     "KDCALLETRA03": [
@@ -2420,6 +2672,48 @@
         "Percent": 53.16,
         "Used": 356.44,
         "Free": 314.06
+      },
+      {
+        "Date": "15-MAY-2026",
+        "Total": 670.5,
+        "Percent": 53.27,
+        "Used": 357.18,
+        "Free": 313.32
+      },
+      {
+        "Date": "16-MAY-2026",
+        "Total": 670.5,
+        "Percent": 53.27,
+        "Used": 357.18,
+        "Free": 313.32
+      },
+      {
+        "Date": "17-MAY-2026",
+        "Total": 670.5,
+        "Percent": 53.3,
+        "Used": 357.38,
+        "Free": 313.12
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 670.5,
+        "Percent": 53.31,
+        "Used": 357.44,
+        "Free": 313.06
+      },
+      {
+        "Date": "19-MAY-2026",
+        "Total": 670.5,
+        "Percent": 53.35,
+        "Used": 357.71,
+        "Free": 312.79
+      },
+      {
+        "Date": "20-MAY-2026",
+        "Total": 670.5,
+        "Percent": 53.46,
+        "Used": 358.45,
+        "Free": 312.05
       }
     ]
   },
