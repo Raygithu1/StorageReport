@@ -5,7 +5,7 @@ using System.Globalization;
 string connString = "Server=spdbssrep004.healthbc.org;Database=StorageServices;Integrated Security=True;TrustServerCertificate=True;";
 var masterExport = new Dictionary<string, object>();
 
-// Your requested mapping
+// Custom naming dictionary
 var nameMap = new Dictionary<string, string> {
     { "KDCALLETRA01", "A01" }, { "KDCALLETRA02", "A02" }, { "KDCALLETRA03", "A03" },
     { "KDCPRIM02", "P02" }, { "KDCPRIM03", "P03" },
@@ -14,7 +14,7 @@ var nameMap = new Dictionary<string, string> {
 
 Console.WriteLine("Fetching Data...");
 
-// Process only Tier 1
+// Process Tier 1 Only
 masterExport["tier1"] = await GetData(nameMap.Keys.ToArray(), "Tier 1 Capacity % Used", "Tier 1 Capacity (GB)");
 
 var options = new JsonSerializerOptions { WriteIndented = true };
@@ -44,7 +44,7 @@ async Task<Dictionary<string, List<object>>> GetData(string[] arrays, string pct
     }
     
     foreach (var n in pivot.Keys.Select(k => k.Item1).Distinct()) {
-        // Use mapped name if available, otherwise keep original
+        // Obscure the name based on the dictionary
         string displayName = nameMap.ContainsKey(n) ? nameMap[n] : n; 
         history[displayName] = new List<object>();
         
