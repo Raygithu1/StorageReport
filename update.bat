@@ -1,4 +1,3 @@
-REM @echo off
 echo =========================================
 echo   Storage Report - GitHub Auto-Updater
 echo =========================================

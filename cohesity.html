@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Main Storage Report</title>
+    <title>Cohesity Backup Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <style>
@@ -11,18 +11,18 @@
         table { width:100%; border-collapse:collapse; } th,td { padding:10px; border:1px solid #ddd; text-align:center; font-size:12px; } th { background:#f8f9fa; }
         .pulse-container { display:flex; gap:20px; margin-bottom:20px; }
         .pulse-card { background:white; padding:15px; border-radius:8px; flex:1; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.05); border-top:4px solid #0d6efd; }
-        nav { margin-bottom: 20px; } nav a { margin-right: 15px; text-decoration: none; color: #0d6efd; font-weight: bold; }
+        nav { margin-bottom: 20px; font-size: 16px; } nav a { text-decoration: none; color: #0d6efd; font-weight: bold; margin-right: 15px; } nav a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html">Main Storage</a> | <a href="cohesity.html">Cohesity</a>
+        <a href="index.html">Main Storage</a> | <a href="cohesity.html" style="margin-left:15px;">Cohesity</a>
     </nav>
 
     <div id="pulse"></div>
 
     <div class="card">
-        <h2>Main Storage Summary (Tier 1)</h2>
+        <h2>Cohesity Backup Summary</h2>
         <table>
             <thead>
                 <tr><th>Array</th><th>Last Report</th><th>Total (TB)</th><th>Used (TB)</th><th>Free (TB)</th><th>% Used</th></tr>
@@ -42,14 +42,16 @@
 
     <script>
         let raw, dates, arrays, chart;
+        const fmt = n => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-        // Fetch the data from your Step 1 export
         fetch('./data.json')
             .then(r => r.json())
             .then(json => {
-                raw = json.cohesity; // Targeted the 'tier1' key from your masterExport
+                raw = json.cohesity; // Target Cohesity data
                 arrays = Object.keys(raw).sort();
-                dates = [...new Set(Object.values(raw).flat().map(x => x.Date))];
+                
+                dates = [...new Set(Object.values(raw).flat().map(x => x.Date))]
+                        .sort((a, b) => new Date(a) - new Date(b));
                 
                 renderTable();
                 initControls();
@@ -62,22 +64,27 @@
                 const lp = raw[a][raw[a].length - 1];
                 tCap += lp.Total; tUsd += lp.Used;
                 const getS = p => p >= 85 ? 'background:#f8d7da' : (p >= 70 ? 'background:#fff3cd' : 'background:#d1e7dd');
-                rows += `<tr><td><b>${a}</b></td><td>${lp.Date}</td><td>${lp.Total.toFixed(2)}</td><td>${lp.Used.toFixed(2)}</td><td>${lp.Free.toFixed(2)}</td><td style="${getS(lp.Percent)}">${lp.Percent.toFixed(2)}%</td></tr>`;
+                
+                rows += `<tr>
+                    <td><b>${a}</b></td><td>${lp.Date}</td><td>${fmt(lp.Total)}</td>
+                    <td>${fmt(lp.Used)}</td><td>${fmt(lp.Free)}</td><td style="${getS(lp.Percent)}">${fmt(lp.Percent)}%</td>
+                </tr>`;
             });
             document.getElementById('tbody').innerHTML = rows;
-            document.getElementById('tfoot').innerHTML = `<tr><td colspan="2">GRAND TOTAL</td><td>${tCap.toFixed(2)}</td><td>${tUsd.toFixed(2)}</td><td>${(tCap-tUsd).toFixed(2)}</td><td>${(tUsd/tCap*100).toFixed(2)}%</td></tr>`;
+            document.getElementById('tfoot').innerHTML = `<tr><td colspan="2">GRAND TOTAL</td><td>${fmt(tCap)}</td><td>${fmt(tUsd)}</td><td>${fmt(tCap-tUsd)}</td><td>${fmt((tUsd/tCap)*100)}%</td></tr>`;
             
             document.getElementById('pulse').innerHTML = `<div class="pulse-container">
-                <div class="pulse-card">UTILIZATION<br><b>${(tUsd/tCap*100).toFixed(2)}%</b></div>
-                <div class="pulse-card" style="border-top-color:#6f42c1">CAPACITY<br><b>${tCap.toFixed(2)} TB</b></div>
-                <div class="pulse-card" style="border-top-color:#198754">USED<br><b>${tUsd.toFixed(2)} TB</b></div>
+                <div class="pulse-card">UTILIZATION<br><b>${fmt((tUsd/tCap)*100)}%</b></div>
+                <div class="pulse-card" style="border-top-color:#6f42c1">CAPACITY<br><b>${fmt(tCap)} TB</b></div>
+                <div class="pulse-card" style="border-top-color:#198754">USED<br><b>${fmt(tUsd)} TB</b></div>
                 <div class="pulse-card" style="border-top-color:#ffc107">ARRAYS<br><b>${arrays.length}</b></div></div>`;
         }
 
         function initControls() {
             const ss = document.getElementById('s'), ee = document.getElementById('e');
             dates.forEach((d, i) => { ss.add(new Option(d, i)); ee.add(new Option(d, i)); });
-            ss.value = Math.max(0, dates.length - 31); ee.value = dates.length - 1;
+            ss.value = Math.max(0, dates.length - 31); 
+            ee.value = dates.length - 1;
         }
 
         function u() {
@@ -87,7 +94,7 @@
             const ds = arrays.map((n, i) => ({
                 label: n, borderColor: ['#0d6efd','#198754','#dc3545','#ffc107','#0dcaf0'][i%5], tension: 0.3, spanGaps: true,
                 data: sd.map(d => { const h = raw[n].find(x => x.Date === d); return h ? h[m] : null; }),
-                datalabels: { display: sd.length <= 31, align: 'top', formatter: v => v ? v.toFixed(2) : '' }
+                datalabels: { display: sd.length <= 31, align: 'top', formatter: v => v ? fmt(v) : '' }
             }));
             if(chart) chart.destroy();
             chart = new Chart(document.getElementById('c'), { type: 'line', data: { labels: sd, datasets: ds }, options: { maintainAspectRatio: false, plugins: { legend: { position: 'top' } } } });

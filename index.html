@@ -11,9 +11,14 @@
         table { width:100%; border-collapse:collapse; } th,td { padding:10px; border:1px solid #ddd; text-align:center; font-size:12px; } th { background:#f8f9fa; }
         .pulse-container { display:flex; gap:20px; margin-bottom:20px; }
         .pulse-card { background:white; padding:15px; border-radius:8px; flex:1; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.05); border-top:4px solid #0d6efd; }
+        nav { margin-bottom: 20px; font-size: 16px; } nav a { text-decoration: none; color: #0d6efd; font-weight: bold; margin-right: 15px; } nav a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Main Storage</a> | <a href="cohesity.html" style="margin-left:15px;">Cohesity</a>
+    </nav>
+
     <div id="pulse"></div>
 
     <div class="card">
@@ -37,8 +42,6 @@
 
     <script>
         let raw, dates, arrays, chart;
-        
-        // Formatter function: adds commas, forces 2 decimal places
         const fmt = n => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
         fetch('./data.json')
@@ -47,7 +50,6 @@
                 raw = json.tier1; 
                 arrays = Object.keys(raw).sort();
                 
-                // Fixed date sorting: extracts all dates, converts to Date object for proper chronological sorting
                 dates = [...new Set(Object.values(raw).flat().map(x => x.Date))]
                         .sort((a, b) => new Date(a) - new Date(b));
                 
@@ -64,12 +66,8 @@
                 const getS = p => p >= 85 ? 'background:#f8d7da' : (p >= 70 ? 'background:#fff3cd' : 'background:#d1e7dd');
                 
                 rows += `<tr>
-                    <td><b>${a}</b></td>
-                    <td>${lp.Date}</td>
-                    <td>${fmt(lp.Total)}</td>
-                    <td>${fmt(lp.Used)}</td>
-                    <td>${fmt(lp.Free)}</td>
-                    <td style="${getS(lp.Percent)}">${fmt(lp.Percent)}%</td>
+                    <td><b>${a}</b></td><td>${lp.Date}</td><td>${fmt(lp.Total)}</td>
+                    <td>${fmt(lp.Used)}</td><td>${fmt(lp.Free)}</td><td style="${getS(lp.Percent)}">${fmt(lp.Percent)}%</td>
                 </tr>`;
             });
             document.getElementById('tbody').innerHTML = rows;
@@ -85,7 +83,6 @@
         function initControls() {
             const ss = document.getElementById('s'), ee = document.getElementById('e');
             dates.forEach((d, i) => { ss.add(new Option(d, i)); ee.add(new Option(d, i)); });
-            // Because the dates array is chronologically sorted, this defaults the view perfectly
             ss.value = Math.max(0, dates.length - 31); 
             ee.value = dates.length - 1;
         }
