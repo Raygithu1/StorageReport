@@ -2893,6 +2893,41 @@
         "Percent": 56.7,
         "Used": 110.06,
         "Free": 84.05
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 194.11,
+        "Percent": 59.7,
+        "Used": 115.89,
+        "Free": 78.23
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 194.11,
+        "Percent": 61.68,
+        "Used": 119.73,
+        "Free": 74.38
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 194.11,
+        "Percent": 59.16,
+        "Used": 114.84,
+        "Free": 79.28
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 194.11,
+        "Percent": 56.39,
+        "Used": 109.46,
+        "Free": 84.65
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 194.11,
+        "Percent": 59.95,
+        "Used": 116.37,
+        "Free": 77.74
       }
     ],
     "COHCCH02": [
@@ -2972,6 +3007,41 @@
         "Percent": 29.4,
         "Used": 32.8,
         "Free": 78.77
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 111.57,
+        "Percent": 29.59,
+        "Used": 33.01,
+        "Free": 78.56
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 111.57,
+        "Percent": 29.61,
+        "Used": 33.04,
+        "Free": 78.54
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 111.57,
+        "Percent": 29.65,
+        "Used": 33.08,
+        "Free": 78.49
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 111.57,
+        "Percent": 29.49,
+        "Used": 32.9,
+        "Free": 78.67
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 111.57,
+        "Percent": 30.69,
+        "Used": 34.24,
+        "Free": 77.33
       }
     ],
     "COHCW01": [
@@ -3051,6 +3121,41 @@
         "Percent": 57.7,
         "Used": 173.78,
         "Free": 127.4
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 301.17,
+        "Percent": 58.46,
+        "Used": 176.06,
+        "Free": 125.11
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 301.17,
+        "Percent": 59.15,
+        "Used": 178.14,
+        "Free": 123.03
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 301.17,
+        "Percent": 56.79,
+        "Used": 171.04,
+        "Free": 130.14
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 301.17,
+        "Percent": 57.22,
+        "Used": 172.33,
+        "Free": 128.84
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 301.17,
+        "Percent": 58.62,
+        "Used": 176.55,
+        "Free": 124.62
       }
     ],
     "COHJPN01": [
@@ -3130,6 +3235,41 @@
         "Percent": 78.2,
         "Used": 134.43,
         "Free": 37.47
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 171.9,
+        "Percent": 81.36,
+        "Used": 139.86,
+        "Free": 32.04
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 171.9,
+        "Percent": 83.28,
+        "Used": 143.16,
+        "Free": 28.74
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 171.9,
+        "Percent": 85.69,
+        "Used": 147.3,
+        "Free": 24.6
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 171.9,
+        "Percent": 83.4,
+        "Used": 143.37,
+        "Free": 28.54
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 171.9,
+        "Percent": 83.22,
+        "Used": 143.06,
+        "Free": 28.85
       }
     ],
     "COHKDC01": [
@@ -3209,6 +3349,41 @@
         "Percent": 69,
         "Used": 644.52,
         "Free": 289.57
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 934.09,
+        "Percent": 71.92,
+        "Used": 671.8,
+        "Free": 262.29
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 934.09,
+        "Percent": 73.52,
+        "Used": 686.74,
+        "Free": 247.35
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 934.09,
+        "Percent": 76.05,
+        "Used": 710.38,
+        "Free": 223.71
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 934.09,
+        "Percent": 70.66,
+        "Used": 660.03,
+        "Free": 274.06
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 934.09,
+        "Percent": 73.06,
+        "Used": 682.45,
+        "Free": 251.64
       }
     ],
     "COHKDC04": [
@@ -3288,6 +3463,41 @@
         "Percent": 71.2,
         "Used": 427.53,
         "Free": 172.93
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 600.47,
+        "Percent": 74.49,
+        "Used": 447.29,
+        "Free": 153.18
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 600.47,
+        "Percent": 74.91,
+        "Used": 449.81,
+        "Free": 150.66
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 600.47,
+        "Percent": 76.8,
+        "Used": 461.16,
+        "Free": 139.31
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 600.47,
+        "Percent": 71.22,
+        "Used": 427.65,
+        "Free": 172.81
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 600.47,
+        "Percent": 73.8,
+        "Used": 443.14,
+        "Free": 157.32
       }
     ],
     "COHKEL01": [
@@ -3367,6 +3577,41 @@
         "Percent": 41.9,
         "Used": 909.45,
         "Free": 1261.07
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 2170.52,
+        "Percent": 41.74,
+        "Used": 905.98,
+        "Free": 1264.55
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 2170.52,
+        "Percent": 42.05,
+        "Used": 912.71,
+        "Free": 1257.82
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 2170.52,
+        "Percent": 41.63,
+        "Used": 903.59,
+        "Free": 1266.94
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 2170.52,
+        "Percent": 41.6,
+        "Used": 902.94,
+        "Free": 1267.59
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 2170.52,
+        "Percent": 42.35,
+        "Used": 919.22,
+        "Free": 1251.31
       }
     ],
     "COHSMH01": [
@@ -3446,6 +3691,41 @@
         "Percent": 63.9,
         "Used": 54.79,
         "Free": 30.95
+      },
+      {
+        "Date": "20-APR-2026",
+        "Total": 85.75,
+        "Percent": 66.83,
+        "Used": 57.3,
+        "Free": 28.44
+      },
+      {
+        "Date": "27-APR-2026",
+        "Total": 85.75,
+        "Percent": 68,
+        "Used": 58.31,
+        "Free": 27.44
+      },
+      {
+        "Date": "04-MAY-2026",
+        "Total": 85.75,
+        "Percent": 66.16,
+        "Used": 56.73,
+        "Free": 29.02
+      },
+      {
+        "Date": "11-MAY-2026",
+        "Total": 85.75,
+        "Percent": 66.4,
+        "Used": 56.94,
+        "Free": 28.81
+      },
+      {
+        "Date": "18-MAY-2026",
+        "Total": 85.75,
+        "Percent": 68.5,
+        "Used": 58.74,
+        "Free": 27.01
       }
     ]
   }
